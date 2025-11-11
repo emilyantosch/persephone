@@ -47,6 +47,7 @@
                 xorg.libXi
                 xorg.libXrandr
                 libxkbcommon
+                wayland
               ];
             RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
             LD_LIBRARY_PATH = lib.makeLibraryPath [
@@ -55,7 +56,9 @@
               xorg.libXi
               xorg.libXcursor
               libxkbcommon
+              wayland
             ];
+            shellHook = ''nu'';
           };
       }
     );
